@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,11 @@ import { HomeComponent } from './components/home/home.component';
 import { ListarprodutosComponent } from './components/produtos/listarprodutos/listarprodutos.component';
 import { CadastrarprodutoComponent } from './components/produtos/cadastrarproduto/cadastrarproduto.component';
 
+import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +21,13 @@ import { CadastrarprodutoComponent } from './components/produtos/cadastrarprodut
     FooterComponent,
     HomeComponent,
     ListarprodutosComponent,
-    CadastrarprodutoComponent
+    CadastrarprodutoComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule],
+
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
