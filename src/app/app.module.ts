@@ -12,6 +12,7 @@ import { CadastrarprodutoComponent } from './components/produtos/cadastrarprodut
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -23,7 +24,7 @@ registerLocaleData(localePt);
     ListarprodutosComponent,
     CadastrarprodutoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
 
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }
