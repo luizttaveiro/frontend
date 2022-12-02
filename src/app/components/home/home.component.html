@@ -1,22 +1,30 @@
 <h1>Seja bem vindo ao curso de Angular!</h1>
-<h4 class="text-danger">{{anuncio}}</h4>
+<h4 class="text-danger">{{ anuncio }}</h4>
 
-<div class="card" style="width: 18rem;">
-  <img [src]="foto" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">
-      {{nomeProduto | uppercase}}
-      <span *ngIf="promocao == true;else elseBlock" class="badge badge-success">Promoção</span>
-      <ng-template #elseBlock>
-        <span class="badge badge-primary">Aproveite</span>
-      </ng-template>
+<div class="row">
+  <div class="col">
 
-    </h5>
-    <p class="card-text">Identificação: {{idProduto | number: '2.0-0'}} <br>
-      Validade: {{dataValidade | date : 'dd/MM/yyyy'}}
-    </p>
-    <a href="#" class="btn btn-primary float-right">
-      {{precoProduto | currency: 'BRL'}}
-    </a>
+    <app-card-produto
+      [foto]="foto"
+      [nomeProduto]="nomeProduto"
+      [promocao]="promocao"
+      [idProduto]="idProduto"
+      [dataValidade]="dataValidade"
+      [precoProduto]="precoProduto"
+    ></app-card-produto>
+
+  </div>
+
+  <div class="col">
+
+    <app-card-produto
+      foto="https://uploads.metropoles.com/wp-content/uploads/2018/11/09102941/41062616_271474956909175_7276112153315863565_n.jpg"
+      nomeProduto="Curso de dança"
+      [promocao]="false"
+      [idProduto]="15"
+      dataValidade="2023-09-11"
+      [precoProduto]="4652.99"
+    ></app-card-produto>
+
   </div>
 </div>

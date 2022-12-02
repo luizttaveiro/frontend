@@ -1,3 +1,4 @@
+import { ProdutosService } from './../../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
